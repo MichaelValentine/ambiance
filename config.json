@@ -1,0 +1,6 @@
+{
+    "localhost": {
+        "return_url": "http://localhost:49996",
+        "node_endpoint": "http://localcalhost:49997"
+    }
+}
