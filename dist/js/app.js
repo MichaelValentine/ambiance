@@ -48,14 +48,14 @@
                     templateUrl: "dist/partials/search.html",
                     cache: false
                 })
-                .state("search", {
-                    controller: "searchCtrl",
-                    url: "/search",
-                    templateUrl: "dist/partials/search.html",
+                .state("meet-me", {
+                    controller: "meetMeCtrl",
+                    url: "/meet-me",
+                    templateUrl: "dist/partials/meet-me.html",
                     cache: false
                 })
                 .state("searchby", {
-                    controller: "searchCtrl",
+                    controller: "searchByCtrl",
                     url: "/search/by",
                     templateUrl: "dist/partials/searchby.html",
                     cache: false
@@ -75,6 +75,22 @@
             // default globals
             $rootScope.title = 'Ambiance';
             $scope.foo="bar";
+
+            $scope.changeState=function(state){
+                $state.go(state);
+            };
+        }
+    ]);
+
+    angular.module("ambiance").controller("meetMeCtrl",  [
+        "$rootScope",
+        "$state",
+        "$timeout",
+        "$scope",
+        "API",
+        function($rootScope,$state,$timeout, $scope, API){
+            // default globals
+            $rootScope.title = 'Meet Me';
 
             $scope.changeState=function(state){
                 $state.go(state);
