@@ -36,10 +36,16 @@
             $urlMatcherFactoryProvider.strictMode(false);
 
             $stateProvider
-                .state("portal", {
-                    controller: "portalCtrl",
+                .state("splash", {
+                    controller: "splashCtrl",
                     url: "/",
-                    templateUrl: "dist/partials/portal.html",
+                    templateUrl: "dist/partials/splash.html",
+                    cache: false
+                })
+                .state("search", {
+                    controller: "searchCtrl",
+                    url: "/",
+                    templateUrl: "dist/partials/search.html",
                     cache: false
                 });
 
@@ -47,7 +53,7 @@
             return { $get: function() {} };
         }]);
 
-    angular.module("ambiance").controller("portalCtrl",  [
+    angular.module("ambiance").controller("splashCtrl",  [
         "$rootScope",
         "$state",
         "$timeout",
@@ -56,6 +62,27 @@
         function($rootScope,$state,$timeout, $scope, API){
             // default globals
             $rootScope.title = 'Ambiance';
+            $scope.foo="bar";
+
+            $scope.changeState=function(state){
+                $state.go(state);
+            };
+        }
+    ]);
+
+    angular.module("ambiance").controller("searchCtrl",  [
+        "$rootScope",
+        "$state",
+        "$timeout",
+        "$scope",
+        "API",
+        function($rootScope,$state,$timeout, $scope, API){
+            // default globals
+            $rootScope.title = 'Search';
+
+            $scope.changeState=function(state){
+                $state.go(state);
+            };
         }
     ]);
     angular.module("ambiance").factory("API", [
