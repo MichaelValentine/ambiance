@@ -47,6 +47,18 @@
                     url: "/search",
                     templateUrl: "dist/partials/search.html",
                     cache: false
+                })
+                .state("search", {
+                    controller: "searchCtrl",
+                    url: "/search",
+                    templateUrl: "dist/partials/search.html",
+                    cache: false
+                })
+                .state("searchby", {
+                    controller: "searchCtrl",
+                    url: "/search/by",
+                    templateUrl: "dist/partials/searchby.html",
+                    cache: false
                 });
 
             // This initializes our provider
