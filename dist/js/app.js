@@ -44,7 +44,7 @@
                 })
                 .state("search", {
                     controller: "searchCtrl",
-                    url: "/",
+                    url: "/search",
                     templateUrl: "dist/partials/search.html",
                     cache: false
                 });
