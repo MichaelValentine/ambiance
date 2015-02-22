@@ -66,6 +66,18 @@
                     templateUrl: "dist/partials/meetMeForm.html",
                     cache: false
                 })
+                .state("meet.friend", {
+                    controller: "meetCtrl",
+                    url: "/friend",
+                    templateUrl: "dist/partials/meetFriendList.html",
+                    cache: false
+                })
+                .state("meet.friend.selected", {
+                    controller: "meetCtrl",
+                    url: "/friend/selected",
+                    templateUrl: "dist/partials/meetMeView.html",
+                    cache: false
+                })
                 .state("meet.me.view", {
                     controller: "meetCtrl",
                     url: "/view",
@@ -118,6 +130,19 @@
             }
             else if($state.is('meet')){
 
+            }
+            else if($state.is('meet.friend')){
+                $scope.invitedList=[{
+                    name: "Mike's Birthday!"
+                }]
+            }
+            else if($state.is('meet.friend.selected')){
+                $scope.inviteList = ['Bob Burger', 'Sally Sue', 'Michel Valentine', "Yuriy Krushelnytskiy"];
+                $scope.formData = {
+                    name: "Mike's Bday!",
+                    time: "20:00",
+                    date: "04/26/1984"
+                }
             }
             else{
                 $scope.friendList = angular.copy($rootScope.friendList);
