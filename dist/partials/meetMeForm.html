@@ -1,0 +1,75 @@
+<div data-ui-view>
+    <form role="form" name="meetMe" class="form-horizontal">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-6">
+            <div class="row form-group">
+                <div class="col-xs-12 text-center" ng-class="{ 'has-error': meetMe.location.$invalid && MeetMe.location.$dirty }">
+                    <label for="location" class="control-label">Location:</label>
+                    <br>
+                    <input type="text" class="form-control" name="location" id="location" ng-model="formData.location" required />
+                    <div class="help-block">
+                        <span ng-show="meetMe.location.$invalid && meetMe.location.$dirty">Location is required.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-xs-4 text-right"></i></div>
+                <div class="col-xs-4">
+                    <button class="btn btn-sm btn-block btn-primary" id="importLocation" ng-click="importLocation()">Import Current Location</button>
+                </div>
+                <div class="col-xs-4"></div>
+            </div>
+            <div class="row form-group">
+                <div class="col-xs-12 text-center" ng-class="{ 'has-error': meetMe.time.$dirty && (meetMe.time.$invalid || !validTime() )  }">
+                    <label for="time" class="control-label">Time:</label>
+                    <input type="text" class="form-control" name="time" id="time" ng-model="formData.time" placeholder="Please use Military time, ie 20:00" required />
+                    <div class="help-block">
+                        <span ng-show="meetMe.time.$invalid && meetMe.time.$dirty">Time is required.</span>
+                        <span ng-show="meetMe.time.$dirty && !validTime()">Time must be of the form hour:minute</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-xs-12 text-center" ng-class="{ 'has-error': meetMe.date.$dirty && (meetMe.date.$invalid || !validDate() )  }">
+                    <label for="date" class="control-label">Date:</label>
+                    <input type="text" class="form-control" name="date" id="date" ng-model="formData.date" placeholder="MM/DD/YYYY" required />
+                    <div class="help-block">
+                        <span ng-show="meetMe.date.$invalid && meetMe.date.$dirty">Date is required.</span>
+                        <span ng-show="meetMe.date.$dirty && !validDate()">Date must be of the form MM/DD/YYYY</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-group">
+                <div class="col-xs-6">
+                    <label for="time" class="control-label">Friend List:</label>
+                    <span ng-repeat="friend in friendList track by $index">
+                        <div class="row-fluid">
+                            <a ng-click="moveToList($index)">{{friend}}</a>
+                        </div>
+                    </span>
+                </div>
+                <div class="col-xs-6">
+                    <label for="time" class="control-label">Invite List:</label>
+                    <span ng-repeat="friend in inviteList track by $index">
+                        <div class="row-fluid">
+                            <span>{{friend}} &nbsp <button ng-click="removeFromList($indexs)">delete</button></span>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="col-xs-offset-3 col-xs-6">
+                    <div class="row form-group">
+                        <div class="col-xs-4 text-right"></div>
+                        <div class="col-xs-4">
+                            <button class="btn btn-sm btn-block btn-primary" id="submitBtn" ng-click="changeState('.view')" ng-disabled="meetMe.$invalid">Submits</button>
+                        </div>
+                        <div class="col-xs-4"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3"></div>
+    </form>
+</div>
