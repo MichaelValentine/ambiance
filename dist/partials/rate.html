@@ -1,0 +1,157 @@
+<form role="form" name="rateForm">
+    <div class="row-fluid">
+        <div class="col-xs-12">
+            <span class="col-xs-3"></span>
+        <span class="col-xs-6">
+            Restaurants Near Me:<br>
+            <select ng-options="item.value for item in places" ng-model="selected"></select>
+        </span>
+            <span class="col-xs-3"></span>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12"><img src="" height="50"></div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12">
+            <span class="col-xs-3"></span>
+        <span class="col-xs-6">
+            Ambiance:<br>
+            <span ng-repeat="item in options.ambiance">
+                <input type="checkbox" ng-checked="item.checked" ng-model="item.checked" ng-change="toggle('ambiance', item.value)">{{item.value}}&nbsp;
+            </span>
+        </span>
+            <span class="col-xs-3"></span>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12"><img src="" height="50"></div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12">
+            <span class="col-xs-3"></span>
+        <span class="col-xs-6">
+            Food Theme:<br>
+            <span ng-repeat="item in options.foodTheme">
+                <input type="checkbox" ng-checked="item.checked" ng-model="item.checked" ng-change="toggle('foodTheme', item.value)">{{item.value}}&nbsp;
+            </span>
+        </span>
+            <span class="col-xs-3"></span>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12"><img src="" height="50"></div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12">
+            <span class="col-xs-3"></span>
+        <span class="col-xs-6">
+            Waiter Attitude:<br>
+            <span ng-repeat="item in options.waiter">
+                <input type="checkbox" ng-checked="item.checked" ng-model="item.checked" ng-change="toggle('waiter', item.value)">{{item.value}}&nbsp;
+            </span>
+        </span>
+            <span class="col-xs-3"></span>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12"><img src="" height="50"></div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12">
+            <span class="col-xs-3"></span>
+        <span class="col-xs-6">
+            Food Price:<br>
+            <span ng-repeat="item in options.foodPrice">
+                <input type="checkbox" ng-checked="item.checked" ng-model="item.checked" ng-change="toggle('foodPrice', item.value)">{{item.value}}&nbsp;
+            </span>
+        </span>
+            <span class="col-xs-3"></span>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12"><img src="" height="50"></div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12">
+            <span class="col-xs-3"></span>
+        <span class="col-xs-6">
+            Drink Price:<br>
+            <span ng-repeat="item in options.drinkPrice">
+                <input type="checkbox" ng-checked="item.checked" ng-model="item.checked" ng-change="toggle('drinkPrice', item.value)">{{item.value}}&nbsp;
+            </span>
+        </span>
+            <span class="col-xs-3"></span>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12"><img src="" height="50"></div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12">
+            <span class="col-xs-3"></span>
+        <span class="col-xs-6">
+            Location:<br>
+            <span ng-repeat="item in options.location">
+                <input type="checkbox" ng-checked="item.checked" ng-model="item.checked" ng-change="toggle('location', item.value)">{{item.value}}&nbsp;
+            </span>
+        </span>
+            <span class="col-xs-3"></span>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12"><img src="" height="50"></div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12">
+            <span class="col-xs-3"></span>
+        <span class="col-xs-6">
+            Dietary Needs:<br>
+            <span ng-repeat="item in options.dietary">
+                <input type="checkbox" ng-checked="item.checked" ng-model="item.checked" ng-change="toggle('dietary', item.value)">{{item.value}}&nbsp;
+            </span>
+        </span>
+            <span class="col-xs-3"></span>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12"><img src="" height="50"></div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12">
+            <span class="col-xs-3"></span>
+        <span class="col-xs-6">
+            Party Size:<br>
+            <span ng-repeat="item in options.partySize">
+                <input type="checkbox" ng-checked="item.checked" ng-model="item.checked" ng-change="toggle('partySize', item.value)">{{item.value}}&nbsp;
+            </span>
+        </span>
+            <span class="col-xs-3"></span>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12"><img src="" height="50"></div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12">
+            <span class="col-xs-3"></span>
+        <span class="col-xs-6">
+            Portion Size:<br>
+            <span ng-repeat="item in options.portionSize">
+                <input type="checkbox" ng-checked="item.checked" ng-model="item.checked" ng-change="toggle('portionSize', item.value)">{{item.value}}&nbsp;
+            </span>
+        </span>
+            <span class="col-xs-3"></span>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-12"><img src="" height="50"></div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+            <button class="btn btn-sm btn-block btn-primary" id="submitBtn" ng-click="submitForm()">Submit Rating</button>
+        </div>
+        <div class="col-xs-4"></div>
+    </div>
+</form>
