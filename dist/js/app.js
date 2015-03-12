@@ -187,6 +187,16 @@
                 return /^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/.test($scope.formData.date);
             };
 
+            $scope.submitMe=function(){
+                if($scope.validTime() && $scope.validDate()){
+                    $scope.changeState('.view');
+                }
+                else{
+                    window.alert("Please enter a valid time and date!");
+                }
+
+            };
+
             $scope.changeState=function(state){
                 $state.go(state, {location:false});
             };
