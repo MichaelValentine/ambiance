@@ -318,7 +318,7 @@
                     {value:'Club vibe'},
                     {value:'Homey'}
                 ],
-                foodTheme:[
+                theme:[
                     {value:'Thai'},
                     {value:'American'},
                     {value:'Chinese'},
@@ -327,7 +327,7 @@
                     {value:'Seafood'},
                     {value:'Grill'}
                 ],
-                waiter:[
+                waiters:[
                     {value:'Snarky'},
                     {value:'Peppy'},
                     {value:'Unassuming'},
@@ -506,7 +506,7 @@
                     ambiance: ['Loud'],
                     foodPrice: ['$'],
                     drinkPrice: ['$'],
-                    location: ['Downtown'],
+                    location: ['Downtown', 'Near Me'],
                     dietary: ['Gluten Free'],
                     partySize: ['1-2'],
                     portionSize: ["Large"]
