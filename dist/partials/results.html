@@ -16,7 +16,10 @@
         <div class="col-xs-4" style="border:solid 1px">
             Name: {{item.name}}<br>
             Last Vistied: {{item.lastVisited}}<br>
-            Waiter Attitude: {{item.waiter}}<br>
+            Location: <span ng-repeat="location in item.location">{{location}} &nbsp;</span><br>
+            Ambiance: <span ng-repeat="ambiance in item.ambiance">{{ambiance}} &nbsp;</span><br>
+            Waiter Attitude: <span ng-repeat="waiter in item.waiters">{{waiter}} &nbsp;</span><br>
+            Food Price: <span ng-repeat="prices in item.foodPrice">{{prices}} &nbsp;</span><br>
         </div>
         <div class="col-xs-4"></div>
     </div>
