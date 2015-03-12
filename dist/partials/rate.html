@@ -32,8 +32,8 @@
             <span class="col-xs-3"></span>
         <span class="col-xs-6">
             Food Theme:<br>
-            <span ng-repeat="item in options.foodTheme">
-                <input type="checkbox" ng-checked="item.checked" ng-model="item.checked" ng-change="toggle('foodTheme', item.value)">{{item.value}}&nbsp;
+            <span ng-repeat="item in options.theme">
+                <input type="checkbox" ng-checked="item.checked" ng-model="item.checked" ng-change="toggle('theme', item.value)">{{item.value}}&nbsp;
             </span>
         </span>
             <span class="col-xs-3"></span>
@@ -47,8 +47,8 @@
             <span class="col-xs-3"></span>
         <span class="col-xs-6">
             Waiter Attitude:<br>
-            <span ng-repeat="item in options.waiter">
-                <input type="checkbox" ng-checked="item.checked" ng-model="item.checked" ng-change="toggle('waiter', item.value)">{{item.value}}&nbsp;
+            <span ng-repeat="item in options.waiters">
+                <input type="checkbox" ng-checked="item.checked" ng-model="item.checked" ng-change="toggle('waiters', item.value)">{{item.value}}&nbsp;
             </span>
         </span>
             <span class="col-xs-3"></span>
